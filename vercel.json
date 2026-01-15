@@ -3,10 +3,6 @@
   "public": true,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/backend/src/main.ts"
-    },
-    {
       "source": "/(.*)",
       "destination": "/frontend/$1"
     }
@@ -15,10 +11,6 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/next"
-    },
-    {
-      "src": "backend/src/main.ts",
-      "use": "@vercel/node"
     }
   ]
 }
