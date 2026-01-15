@@ -160,14 +160,6 @@ export default function LoginPage() {
                   }}
                 />
 
-                <Box sx={{ textAlign: 'right' }}>
-                  <Link href="/recuperar-senha" style={{ textDecoration: 'none' }}>
-                    <Typography variant="body2" color="primary" sx={{ fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
-                      Esqueceu a senha?
-                    </Typography>
-                  </Link>
-                </Box>
-
                 <Button
                   fullWidth
                   size="large"
@@ -176,6 +168,7 @@ export default function LoginPage() {
                   disabled={loading}
                   sx={{
                     py: 1.5,
+                    mt: 2,
                     borderRadius: 3,
                     fontWeight: 700,
                     fontSize: '1rem',
@@ -189,19 +182,6 @@ export default function LoginPage() {
                 </Button>
               </Box>
             </form>
-
-            <Divider sx={{ my: 4 }}>
-              <Typography variant="body2" color="text.secondary">ou</Typography>
-            </Divider>
-
-            <Typography variant="body2" color="text.secondary">
-              Ainda não tem uma conta?{' '}
-              <Link href="/cadastro" style={{ textDecoration: 'none' }}>
-                <Typography component="span" variant="body2" color="primary" sx={{ fontWeight: 700, '&:hover': { textDecoration: 'underline' } }}>
-                  Cadastre-se agora
-                </Typography>
-              </Link>
-            </Typography>
 
             <Box sx={{ mt: 4 }}>
               <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
