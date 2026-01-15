@@ -65,8 +65,15 @@ export function Footer() {
               Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {['Início', 'Quem Somos', 'Serviços', 'FAQ', 'Política de Privacidade', 'Termos de Uso'].map((item) => (
-                <Link key={item} href="#" style={{ textDecoration: 'none' }}>
+              {[
+                { label: 'Início', href: '/' },
+                { label: 'Quem Somos', href: '/quem-somos' },
+                { label: 'Serviços', href: '/servicos' },
+                { label: 'FAQ', href: '/faq' },
+                { label: 'Política de Privacidade', href: '/politica-privacidade' },
+                { label: 'Termos de Uso', href: '/termos-uso' }
+              ].map((item) => (
+                <Link key={item.label} href={item.href} style={{ textDecoration: 'none' }}>
                   <Typography
                     variant="body2"
                     sx={{
@@ -75,7 +82,7 @@ export function Footer() {
                       transition: 'color 0.2s'
                     }}
                   >
-                    {item}
+                    {item.label}
                   </Typography>
                 </Link>
               ))}
@@ -135,12 +142,12 @@ export function Footer() {
             © {new Date().getFullYear()} Oral Life. Todos os direitos reservados.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
-            <Link href="#" style={{ textDecoration: 'none' }}>
+            <Link href="/politica-privacidade" style={{ textDecoration: 'none' }}>
               <Typography variant="caption" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                 Política de Privacidade
               </Typography>
             </Link>
-            <Link href="#" style={{ textDecoration: 'none' }}>
+            <Link href="/termos-uso" style={{ textDecoration: 'none' }}>
               <Typography variant="caption" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                 Termos de Uso
               </Typography>

@@ -1,5 +1,6 @@
 import { Container, Typography, Box, Button, Grid, Paper } from '@mui/material';
-import { Shield, Clock, Users, Star } from 'lucide-react';
+import { Brain, MessageSquare, Shield, Users, Star, Activity } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -10,18 +11,20 @@ export default function Home() {
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' }, mb: 2, color: 'text.primary' }}>
-                Seu Sorriso, <Box component="span" sx={{ color: 'primary.main' }}>Nossa Missão</Box>
+                Cuidado Integral para a <Box component="span" sx={{ color: 'primary.main' }}>Sua Saúde</Box>
               </Typography>
               <Typography variant="h5" sx={{ mb: 4, color: 'text.secondary', fontWeight: 400 }}>
-                Excelência em tratamentos odontológicos com tecnologia de ponta e uma equipe dedicada ao seu bem-estar.
+                Clínica multidisciplinar com especialistas em Psicologia, Fonoaudiologia, Neuropedagogia e muito mais. Atendimento humanizado para todas as fases da vida.
               </Typography>
               <Box sx={{ display: 'flex', gap: 2 }}>
                 <Button variant="contained" color="primary" size="large" sx={{ px: 4 }}>
                   Agendar Consulta
                 </Button>
-                <Button variant="outlined" color="primary" size="large" sx={{ px: 4 }}>
-                  Nossos Serviços
-                </Button>
+                <Link href="/servicos" style={{ textDecoration: 'none' }}>
+                  <Button variant="outlined" color="primary" size="large" sx={{ px: 4 }}>
+                    Nossos Serviços
+                  </Button>
+                </Link>
               </Box>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
@@ -44,14 +47,22 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Features Section */}
+      {/* Specialties Preview */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
+            Especialidades Multidisciplinares
+          </Typography>
+          <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400 }}>
+            Uma equipe completa trabalhando de forma integrada pelo seu desenvolvimento.
+          </Typography>
+        </Box>
         <Grid container spacing={4}>
           {[
-            { icon: <Shield size={40} />, title: 'Segurança', desc: 'Protocolos rigorosos de esterilização e higiene.' },
-            { icon: <Clock size={40} />, title: 'Agilidade', desc: 'Sistemas modernos para otimizar seu tempo.' },
-            { icon: <Users size={40} />, title: 'Equipe', desc: 'Profissionais altamente qualificados e experientes.' },
-            { icon: <Star size={40} />, title: 'Qualidade', desc: 'Materiais de primeira linha em todos os procedimentos.' },
+            { icon: <Brain size={40} />, title: 'Psicologia', desc: 'Apoio emocional e desenvolvimento comportamental para todas as idades.' },
+            { icon: <MessageSquare size={40} />, title: 'Fonoaudiologia', desc: 'Especialistas em fala, linguagem e comunicação humana.' },
+            { icon: <Star size={40} />, title: 'Neuropedagogia', desc: 'Intervenção nos processos de aprendizagem e neurociência.' },
+            { icon: <Activity size={40} />, title: 'Terapia Ocupacional', desc: 'Promovendo autonomia e independência nas atividades diárias.' },
           ].map((feature, index) => (
             <Grid size={{ xs: 12, md: 3 }} key={index}>
               <Paper 
@@ -62,7 +73,7 @@ export default function Home() {
                   height: '100%', 
                   border: '1px solid', 
                   borderColor: 'divider',
-                  borderRadius: 4, // Card mais arredondado
+                  borderRadius: 8, // Card mais arredondado
                   '&:hover': { 
                     borderColor: 'primary.main', 
                     transform: 'translateY(-8px)',
@@ -84,6 +95,13 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ textAlign: 'center', mt: 6 }}>
+          <Link href="/servicos" style={{ textDecoration: 'none' }}>
+            <Button variant="text" color="primary" size="large" sx={{ fontWeight: 600 }}>
+              Ver todas as especialidades →
+            </Button>
+          </Link>
+        </Box>
       </Container>
     </Box>
   );

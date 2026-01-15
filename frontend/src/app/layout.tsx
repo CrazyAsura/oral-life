@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Oral Life | Sua Clínica Odontológica",
-  description: "Sistema de gestão e atendimento de excelência para sua saúde bucal.",
+  title: "Oral Life | Clínica Multidisciplinar",
+  description: "Atendimento especializado em Psicologia, Fonoaudiologia, Neuropedagogia e mais. Cuidado integral para sua saúde.",
 };
 
 export default function RootLayout({
