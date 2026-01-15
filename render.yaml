@@ -9,7 +9,7 @@ services:
     plan: free
     envVars:
       - key: PORT
-        value: 3001
+        value: 10000
       - fromContext: MONGODB_URI
         key: MONGODB_URI
       - key: NODE_ENV
