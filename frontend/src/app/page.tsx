@@ -30,7 +30,7 @@ export default function Home() {
                   width: '100%', 
                   height: 400, 
                   bgcolor: 'primary.main', 
-                  borderRadius: 4,
+                  borderRadius: 8, // Mais arredondado para o herói
                   opacity: 0.1,
                   display: 'flex',
                   alignItems: 'center',
@@ -53,7 +53,7 @@ export default function Home() {
             { icon: <Users size={40} />, title: 'Equipe', desc: 'Profissionais altamente qualificados e experientes.' },
             { icon: <Star size={40} />, title: 'Qualidade', desc: 'Materiais de primeira linha em todos os procedimentos.' },
           ].map((feature, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+            <Grid size={{ xs: 12, md: 3 }} key={index}>
               <Paper 
                 elevation={0} 
                 sx={{ 
@@ -62,8 +62,13 @@ export default function Home() {
                   height: '100%', 
                   border: '1px solid', 
                   borderColor: 'divider',
-                  '&:hover': { borderColor: 'primary.main', transform: 'translateY(-5px)' },
-                  transition: 'all 0.3s'
+                  borderRadius: 4, // Card mais arredondado
+                  '&:hover': { 
+                    borderColor: 'primary.main', 
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 12px 24px -10px rgba(46, 125, 50, 0.2)'
+                  },
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
               >
                 <Box sx={{ color: 'primary.main', mb: 2, display: 'flex', justifyContent: 'center' }}>

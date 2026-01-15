@@ -34,7 +34,15 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 12, // Botões mais arredondados
+          padding: '8px 24px',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16, // Cards e Papers mais arredondados por padrão
         },
       },
     },
