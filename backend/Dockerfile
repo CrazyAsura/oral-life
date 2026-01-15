@@ -1,0 +1,31 @@
+# Use a imagem oficial do Bun
+FROM oven/bun:1 as base
+WORKDIR /usr/src/app
+
+# Instalar dependências
+FROM base AS install
+RUN mkdir -p /temp/dev
+COPY package.json bun.lock /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
+
+# Instalar dependências de produção
+RUN mkdir -p /temp/prod
+COPY package.json bun.lock /temp/prod/
+RUN cd /temp/prod && bun install --frozen-lockfile --production
+
+# Build do projeto
+FROM base AS prerelease
+COPY --from=install /temp/dev/node_modules node_modules
+COPY . .
+RUN bun run build
+
+# Imagem final de execução
+FROM base AS release
+COPY --from=install /temp/prod/node_modules node_modules
+COPY --from=prerelease /usr/src/app/dist dist
+COPY --from=prerelease /usr/src/app/package.json .
+
+# Rodar a aplicação
+USER bun
+EXPOSE 3001
+ENTRYPOINT [ "bun", "run", "dist/main.js" ]
