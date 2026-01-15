@@ -1,12 +1,16 @@
 services:
   - type: web
     name: oral-life-backend
-    env: docker
+    runtime: bun
     repo: https://github.com/CrazyAsura/oral-life.git
     rootDir: backend
+    buildCommand: bun install && bun run build
+    startCommand: bun run start:prod
     plan: free
     envVars:
       - key: PORT
         value: 3001
       - fromContext: MONGODB_URI
         key: MONGODB_URI
+      - key: NODE_ENV
+        value: production
