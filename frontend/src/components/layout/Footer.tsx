@@ -67,11 +67,11 @@ export function Footer() {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
               {[
                 { label: 'Início', href: '/' },
-                { label: 'Quem Somos', href: '/quem-somos' },
-                { label: 'Serviços', href: '/servicos' },
+                { label: 'Quem Somos', href: '/about-us' },
+                { label: 'Serviços', href: '/services' },
                 { label: 'FAQ', href: '/faq' },
-                { label: 'Política de Privacidade', href: '/politica-privacidade' },
-                { label: 'Termos de Uso', href: '/termos-uso' }
+                { label: 'Política de Privacidade', href: '/privacy-policy' },
+                { label: 'Termos de Uso', href: '/terms-of-use' }
               ].map((item) => (
                 <Link key={item.label} href={item.href} style={{ textDecoration: 'none' }}>
                   <Typography
@@ -142,12 +142,12 @@ export function Footer() {
             © {new Date().getFullYear()} Oral Life. Todos os direitos reservados.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
-            <Link href="/politica-privacidade" style={{ textDecoration: 'none' }}>
+            <Link href="/privacy-policy" style={{ textDecoration: 'none' }}>
               <Typography variant="caption" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                 Política de Privacidade
               </Typography>
             </Link>
-            <Link href="/termos-uso" style={{ textDecoration: 'none' }}>
+            <Link href="/terms-of-use" style={{ textDecoration: 'none' }}>
               <Typography variant="caption" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                 Termos de Uso
               </Typography>

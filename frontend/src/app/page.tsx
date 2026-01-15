@@ -20,7 +20,7 @@ export default function Home() {
                 <Button variant="contained" color="primary" size="large" sx={{ px: 4 }}>
                   Agendar Consulta
                 </Button>
-                <Link href="/servicos" style={{ textDecoration: 'none' }}>
+                <Link href="/services" style={{ textDecoration: 'none' }}>
                   <Button variant="outlined" color="primary" size="large" sx={{ px: 4 }}>
                     Nossos Serviços
                   </Button>
@@ -96,7 +96,7 @@ export default function Home() {
           ))}
         </Grid>
         <Box sx={{ textAlign: 'center', mt: 6 }}>
-          <Link href="/servicos" style={{ textDecoration: 'none' }}>
+          <Link href="/services" style={{ textDecoration: 'none' }}>
             <Button variant="text" color="primary" size="large" sx={{ fontWeight: 600 }}>
               Ver todas as especialidades →
             </Button>

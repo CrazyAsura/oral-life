@@ -5,13 +5,13 @@ WORKDIR /usr/src/app
 # Instalar dependências
 FROM base AS install
 RUN mkdir -p /temp/dev
-COPY package.json bun.lock /temp/dev/
-RUN cd /temp/dev && bun install --frozen-lockfile
+COPY package.json /temp/dev/
+RUN cd /temp/dev && bun install
 
 # Instalar dependências de produção
 RUN mkdir -p /temp/prod
-COPY package.json bun.lock /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile --production
+COPY package.json /temp/prod/
+RUN cd /temp/prod && bun install --production
 
 # Build do projeto
 FROM base AS prerelease
@@ -28,4 +28,4 @@ COPY --from=prerelease /usr/src/app/package.json .
 # Rodar a aplicação
 USER bun
 EXPOSE 3001
-ENTRYPOINT [ "bun", "run", "dist/main.js" ]
+ENTRYPOINT [ "bun", "run", "start:prod" ]

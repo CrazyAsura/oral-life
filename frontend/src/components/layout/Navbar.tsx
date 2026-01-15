@@ -25,8 +25,8 @@ import Link from 'next/link';
 
 const navItems = [
   { label: 'Início', href: '/' },
-  { label: 'Quem Somos', href: '/quem-somos' },
-  { label: 'Serviços', href: '/servicos' },
+  { label: 'Quem Somos', href: '/about-us' },
+  { label: 'Serviços', href: '/services' },
   { label: 'FAQ', href: '/faq' },
 ];
 
