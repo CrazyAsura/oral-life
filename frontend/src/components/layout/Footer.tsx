@@ -41,7 +41,7 @@ export function Footer() {
               LIFE
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, maxWidth: 300 }}>
-              Cuidando do seu sorriso com excelência e tecnologia de ponta. Sua saúde bucal é nossa prioridade.
+              Cuidado multidisciplinar integrado para o seu bem-estar. Psicologia, fonoaudiologia, neuropedagogia e muito mais.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               <IconButton size="small" sx={{ color: 'primary.main', '&:hover': { bgcolor: 'primary.main', color: 'white' } }}>
@@ -95,7 +95,7 @@ export function Footer() {
               Serviços
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {['Implantes', 'Ortodontia', 'Clareamento', 'Estética Dental'].map((item) => (
+              {['Psicologia', 'Fonoaudiologia', 'Neuropedagogia', 'Avaliação Neuropsicológica'].map((item) => (
                 <Typography
                   key={item}
                   variant="body2"
